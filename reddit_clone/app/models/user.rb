@@ -6,6 +6,17 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :subs,
+    primary_key: :id,
+    foreign_key: :moderator_id,
+    class_name: :Sub,
+    dependent: :destroy
+
+  has_many :posts,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Post
+
   def generate_session_token
     SecureRandom::urlsafe_base64
   end

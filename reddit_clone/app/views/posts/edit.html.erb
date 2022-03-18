@@ -1,0 +1,15 @@
+<h1>Edit a Post</h1>
+<form action="<%= post_url(@post) %>" method="POST">
+  <%= auth_token %>
+  <input type="hidden" name="_method" value="patch">
+  <label>Title
+    <input type="text" name="post[title]" value="<%= @post.title %>">
+  </label>
+  <label>URL
+    <input type="text" name="post[url]" value="<%= @post.url.nil? ? "" : @post.url%>">
+  </label>
+  <label>Content
+    <input type="text" name="post[content]" value="<%= @post.content.nil? ? "" : @post.content%>">
+  </label>
+  <input type="submit" value = "Edit Post">
+</form>

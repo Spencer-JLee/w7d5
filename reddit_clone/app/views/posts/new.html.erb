@@ -1,0 +1,14 @@
+<h1>Create a Post</h1>
+<form action="<%= posts_url %>" method="POST">
+  <%= auth_token %>
+  <label>Title
+    <input type="text" name="post[title]">
+  </label>
+  <label>URL
+    <input type="text" name="post[url]">
+  </label>
+  <label>Content
+    <input type="text" name="post[content]">
+  </label>
+  <input type="submit" value = "Create Post">
+</form>

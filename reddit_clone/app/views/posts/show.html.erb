@@ -1,0 +1,20 @@
+<h1><%= @post.title %></h1>
+<label>URL: 
+<% if !@post.url.nil? %>
+  <%= @post.url %>
+<% end %>
+</label>
+
+<label>Content: 
+<% if !@post.content.nil? %>
+  <%= @post.content %>
+<% end %>
+</label>
+
+<label>Sub:
+  <a href="<%= sub_url(@post.sub_id) %>"><%= @post.sub.title %></a>
+</label>
+
+<label>Author:
+  <a href="<%= user_url(@post.author_id) %>"><%= @post.author.username %></a>
+</label>
