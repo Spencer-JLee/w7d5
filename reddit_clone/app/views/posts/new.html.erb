@@ -10,5 +10,14 @@
   <label>Content
     <input type="text" name="post[content]">
   </label>
+  <br>
+  <label>Available Subs:
+    <% @subs.each do |sub| %>
+      <div>
+        <input type="checkbox" name="<%= sub.id %>" id="<%= sub.title %>">
+        <label for="<%= sub.title %>"><%= sub.title %></label>
+      </div>
+    <% end %>
+  </label>
   <input type="submit" value = "Create Post">
 </form>
